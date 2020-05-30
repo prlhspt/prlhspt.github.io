@@ -15,6 +15,9 @@ def print_hi(name):
 print_hi('Tom')
 ​```
 
+![Screenshot from 2020-05-30 18-05-32](https://user-images.githubusercontent.com/51734550/83324448-50a9e500-a2a0-11ea-8d68-90facdbd6db9.png)
+
+'''
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
