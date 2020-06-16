@@ -65,6 +65,7 @@ Change these variables in `_config.yml`:
 | gravatar    | f9879d71855b5ff21e4963273a886bfc | [MD5 hash of your email address](https://secure.gravatar.com/site/implement/hash/) to load your Gravatar in the theme's header | Yes      |
 | description | My blog posts                    | Short description, primarily used by search engines                                                                            | Yes      |
 
+
 ### Header and footer text
 
 Change these variables in `_config.yml`:

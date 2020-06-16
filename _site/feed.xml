@@ -1,102 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Type Theme</title>
+    <title>Library</title>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
-    <description>A website with blog posts and pages</description>
-    <pubDate>Tue, 16 Jun 2020 23:19:20 +0900</pubDate>
+    <description>Individual Study Note</description>
+    <pubDate>Wed, 17 Jun 2020 00:26:20 +0900</pubDate>
     
       <item>
-        <title>Sample post</title>
-        <link>/2014/11/30/sample-post.html</link>
-        <guid isPermaLink="true">/2014/11/30/sample-post.html</guid>
-        <description>&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.&lt;/p&gt;
+        <title>First Test page</title>
+        <link>/2020/06/16/fisrt-post.html</link>
+        <guid isPermaLink="true">/2020/06/16/fisrt-post.html</guid>
+        <description>&lt;h1 id=&quot;테스트-입니다&quot;&gt;테스트 입니다.&lt;/h1&gt;
+
+&lt;p&gt;.. 테스트입니다..
+&lt;br /&gt;테스트 입니다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Jun 2020 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>우분투 18.04 DL4J 예제 설치</title>
+        <link>/dl4j/2020/05/30/dl4j.html</link>
+        <guid isPermaLink="true">/dl4j/2020/05/30/dl4j.html</guid>
+        <description>&lt;h1 id=&quot;설치-종류&quot;&gt;설치 종류&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;java&lt;/li&gt;
+  &lt;li&gt;maven&lt;/li&gt;
+  &lt;li&gt;git&lt;/li&gt;
+  &lt;li&gt;intellij&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;1-java&quot;&gt;1. java&lt;/h2&gt;
+
+&lt;h3 id=&quot;jdk-설치-확인&quot;&gt;jdk 설치 확인&lt;/h3&gt;
+
+&lt;p&gt;$ javac -version&lt;br /&gt;
+$ sudo apt-get install default-jdk&lt;br /&gt;
+$ sudo apt-get install openjdk-8-jdk&lt;/p&gt;
+
+&lt;h3 id=&quot;환경-변수-설정&quot;&gt;환경 변수 설정&lt;/h3&gt;
+
+&lt;p&gt;$ vim /etc/profile&lt;br /&gt;
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/javac 맨 아래 추가&lt;br /&gt;
+$ reboot&lt;br /&gt;
+$ echo $JAVA_HOME으로 확인&lt;/p&gt;
+
+&lt;h2 id=&quot;2-maven&quot;&gt;2. maven&lt;/h2&gt;
+&lt;p&gt;$ sudo apt-get install maven&lt;/p&gt;
+
+&lt;h2 id=&quot;3-git&quot;&gt;3. git&lt;/h2&gt;
+&lt;p&gt;$ sudo apt-get install git&lt;/p&gt;
+
+&lt;h3 id=&quot;깃이-설치되어있다면-업데이트&quot;&gt;깃이 설치되어있다면 업데이트&lt;/h3&gt;
+
+&lt;p&gt;$ git clone git://git.kernel.org/pub/scm/git/git.git&lt;/p&gt;
+
+&lt;h2 id=&quot;4-intellij&quot;&gt;4. intellij&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.jetbrains.com/ko-kr/idea/download/#section=linux&quot;&gt;https://www.jetbrains.com/ko-kr/idea/download/#section=linux&lt;/a&gt;
+압축 해제 후 bin/idea.sh 설치&lt;/p&gt;
+
+&lt;h1 id=&quot;예제-실행해보기&quot;&gt;예제 실행해보기&lt;/h1&gt;
+&lt;p&gt;git clone https://github.com/eclipse/deeplearning4j-examples.git&lt;/p&gt;
+
+&lt;p&gt;cd dl4j-examples/&lt;/p&gt;
+
+&lt;p&gt;mvn clean install&lt;/p&gt;
+
+&lt;p&gt;open - dl4j-examples 폴더 열기&lt;/p&gt;
+
+&lt;p&gt;run - edit configuration&lt;/p&gt;
+
+&lt;p&gt;Main class, Working directory 설정 후 실행
+&lt;img src=&quot;https://user-images.githubusercontent.com/51734550/83331787-24f42280-a2d3-11ea-93ea-c99fb8399437.png&quot; alt=&quot;Screenshot from 2020-05-30 23-40-20&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;실행 결과
+&lt;img src=&quot;https://user-images.githubusercontent.com/51734550/83331892-74d2e980-a2d3-11ea-9056-79e12dbff799.png&quot; alt=&quot;Screenshot from 2020-05-31 00-12-27&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/51734550/83331893-76041680-a2d3-11ea-985f-9eb6b8ed6e41.png&quot; alt=&quot;Screenshot from 2020-05-31 00-12-32&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References:&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
-  &lt;li&gt;Donec a diam lectus&lt;/li&gt;
-  &lt;li&gt;Sed sit amet ipsum mauris&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://deeplearning4j.org/docs/latest/deeplearning4j-quickstart&quot;&gt;https://deeplearning4j.org/docs/latest/deeplearning4j-quickstart&lt;/a&gt;
+&lt;!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEzMjY5MTcyMjUsMTg4MjMwNDIwMCwtMT
+I0MzI1MTM4NF19
+--&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.&lt;/p&gt;
-
-&lt;p&gt;Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula &lt;em&gt;semper consectetur sagittis&lt;/em&gt;, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.&lt;/p&gt;
-
-&lt;p&gt;Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt.&lt;/p&gt;
-
-&lt;p&gt;Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 30 Nov 2014 00:00:00 +0900</pubDate>
-      </item>
-    
-      <item>
-        <title>Feature images</title>
-        <link>/2014/11/29/feature-images.html</link>
-        <guid isPermaLink="true">/2014/11/29/feature-images.html</guid>
-        <description>&lt;p&gt;This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 29 Nov 2014 00:00:00 +0900</pubDate>
-      </item>
-    
-      <item>
-        <title>Markdown and HTML</title>
-        <link>/2014/11/28/markdown-and-html.html</link>
-        <guid isPermaLink="true">/2014/11/28/markdown-and-html.html</guid>
-        <description>&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
-
-&lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;First Header&lt;/th&gt;
-      &lt;th&gt;Second Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Here’s an example of an image, which is included using Markdown:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/sample_feature_img_2.png&quot; alt=&quot;Geometric pattern with fading gradient&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Highlighting for code in Jekyll is done using Pygments or Rouge. This theme makes use of Rouge by default.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// count to ten&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// count to twenty&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Type Theme uses KaTeX to display maths. Equations such as &lt;script type=&quot;math/tex&quot;&gt;S_n = a \times \frac{1-r^n}{1-r}&lt;/script&gt; can be displayed inline.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, they can be shown on a new line:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) = \int \frac{2x^2+4x+6}{x-2}&lt;/script&gt;
-</description>
-        <pubDate>Fri, 28 Nov 2014 00:00:00 +0900</pubDate>
+        <pubDate>Sat, 30 May 2020 13:17:00 +0900</pubDate>
       </item>
     
   </channel>
