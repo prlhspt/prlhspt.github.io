@@ -5,7 +5,7 @@ url: "https://prlhspt.github.io/"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Library
+  title: 
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
@@ -13,7 +13,7 @@ theme_settings:
 
   # Header and footer text
   header_text: 
-     <h2>배움엔 끝이 없는데..</h2>
+     <h3>Happiness is the ability to move forward, knowing the future will be better than the past</h3>
 
   header_text_feature_image:
   footer_text: >
