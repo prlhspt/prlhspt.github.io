@@ -13,8 +13,7 @@ theme_settings:
 
   # Header and footer text
   header_text: 
-     <h3><p>Happiness is the ability to move forward,</p>
-     <p>knowing the future will be better than the past</p></h3>
+     <h3><p>Enjoy it</p>
 
   header_text_feature_image:
   footer_text: >
