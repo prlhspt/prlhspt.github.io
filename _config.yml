@@ -5,11 +5,11 @@ url: "https://prlhspt.github.io/"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: "Library"
+  title: "스터디 중 !"
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
-  description: "Individual Study Note" # used by search engines
+  description: "스터디 중 !" # used by search engines
 
   # Header and footer text
   header_text: 
@@ -21,7 +21,7 @@ theme_settings:
 
   # Icons
   rss: false
-  email_address: "prlhspt@naver.com" # Full email address, e.g. "sam@example.com"
+  email_address: "prlhspt@gmail.com" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
