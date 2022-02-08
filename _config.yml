@@ -83,7 +83,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   
-  
+exclude: [vendor]
+
 remote_theme : rohanchandra/type-theme
 
 theme: jekyll-theme-minimal

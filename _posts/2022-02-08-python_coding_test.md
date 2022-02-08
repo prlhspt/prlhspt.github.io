@@ -1,8 +1,9 @@
 ---
 title: 파이썬 코딩테스트시 유용한 코드 템플릿
-date: 2022-02-08 20:50:00 -0400
+date: 2022-02-08 20:50:00 +0900
 categories: 알고리즘
 ---
+
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=true} -->
 
@@ -27,7 +28,7 @@ categories: 알고리즘
 
 # 소개
 
- [파이썬 알고리즘 인터뷰](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791189909178) 에 대한 내용 중 구현 부분에서 유용하게 사용할 수 있는 코드 템플릿을 정리하였습니다.
+ [파이썬 알고리즘 인터뷰](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791189909178) 에 대한 내용 중 구현하는 문제에서 유용하게 사용할 수 있는 코드 템플릿을 정리하였습니다.
 
 ---
 

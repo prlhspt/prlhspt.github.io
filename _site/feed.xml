@@ -1,95 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Library</title>
+    <title>스터디 중 !</title>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
-    <description>Individual Study Note</description>
-    <pubDate>Wed, 17 Jun 2020 00:26:20 +0900</pubDate>
+    <description>스터디 중 !</description>
+    <pubDate>Wed, 09 Feb 2022 00:29:33 +0900</pubDate>
     
       <item>
-        <title>First Test page</title>
-        <link>/2020/06/16/fisrt-post.html</link>
-        <guid isPermaLink="true">/2020/06/16/fisrt-post.html</guid>
-        <description>&lt;h1 id=&quot;테스트-입니다&quot;&gt;테스트 입니다.&lt;/h1&gt;
+        <title>파이썬 코딩테스트시 유용한 코드 템플릿</title>
+        <link>/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2022/02/08/python_coding_test.html</link>
+        <guid isPermaLink="true">/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2022/02/08/python_coding_test.html</guid>
+        <description>&lt;!-- @import &quot;[TOC]&quot; {cmd=&quot;toc&quot; depthFrom=1 depthTo=6 orderedList=true} --&gt;
 
-&lt;p&gt;.. 테스트입니다..
-&lt;br /&gt;테스트 입니다.&lt;/p&gt;
+&lt;!-- code_chunk_output --&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#소개&quot;&gt;소개&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#deque-한번에-선언하기&quot;&gt;deque 한번에 선언하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#defaultdict-dict에-keyerror-대신-딕셔너리-아이템-생성&quot;&gt;defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#counter-키에는-아이템의-값-값에는-아이템의-개수인-딕셔너리-출력&quot;&gt;Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#countermost_commoni-가장-빈도수가-높은-요소-i개-출력&quot;&gt;Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#isalnum-영문-숫자-판별&quot;&gt;isalnum: 영문, 숫자 판별&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#정규표현식으로-영문-숫자만-잘라내기&quot;&gt;정규표현식으로 영문 숫자만 잘라내기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#문자-뒤집기&quot;&gt;문자 뒤집기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#람다로-정렬&quot;&gt;람다로 정렬&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#이중-리스트-컴프리헨션&quot;&gt;이중 리스트 컴프리헨션&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#애너그램-구하기&quot;&gt;애너그램 구하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#key에-함수-넣기&quot;&gt;key에 함수 넣기&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- /code_chunk_output --&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;소개&quot;&gt;소개&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9791189909178&quot;&gt;파이썬 알고리즘 인터뷰&lt;/a&gt; 에 대한 내용 중 구현하는 문제에서 유용하게 사용할 수 있는 코드 템플릿을 정리하였습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;deque-한번에-선언하기&quot;&gt;deque 한번에 선언하기&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;bridge&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bridge_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;defaultdict--dict에-keyerror-대신-딕셔너리-아이템-생성&quot;&gt;defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'B'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'C'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# OUTPUT
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;gt;, {'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;': 5, 'B': 4, '&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;': 1})
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;counter--키에는-아이템의-값-값에는-아이템의-개수인-딕셔너리-출력&quot;&gt;Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# OUTPUT
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;countermost_commoni--가장-빈도수가-높은-요소-i개-출력&quot;&gt;Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most_common&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# OUTPUT
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;isalnum-영문-숫자-판별&quot;&gt;isalnum: 영문, 숫자 판별&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isalnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;정규표현식으로-영문-숫자만-잘라내기&quot;&gt;정규표현식으로 영문 숫자만 잘라내기&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[^a-z0-9]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;문자-뒤집기&quot;&gt;문자 뒤집기&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;람다로-정렬&quot;&gt;람다로 정렬&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;x를 공백 기준으로 split 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[1:]&lt;/code&gt;로 정렬하고, 동일하면 후 순위로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[0]&lt;/code&gt;으로 정렬&lt;/p&gt;
+
+&lt;h1 id=&quot;이중-리스트-컴프리헨션&quot;&gt;이중 리스트 컴프리헨션&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;paragraph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Bob hit a ball, the hit Ball flew far after it was hit'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;banned&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r'[^\w]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paragraph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;banned&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#OUTPUT
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bob'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ball'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'the'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ball'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'flew'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'far'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'after'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'it'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'was'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;애너그램-구하기&quot;&gt;애너그램 구하기&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;strs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'eat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tea'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tan'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ate'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'bat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;anagrams&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 정렬하여 딕셔너리에 추가
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;anagrams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anagrams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# OUTPUT
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'eat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tea'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ate'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'tan'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;key에-함수-넣기&quot;&gt;key에 함수 넣기&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'cae'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'cfc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'abc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Tue, 16 Jun 2020 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 08 Feb 2022 20:50:00 +0900</pubDate>
       </item>
     
       <item>
-        <title>우분투 18.04 DL4J 예제 설치</title>
-        <link>/dl4j/2020/05/30/dl4j.html</link>
-        <guid isPermaLink="true">/dl4j/2020/05/30/dl4j.html</guid>
-        <description>&lt;h1 id=&quot;설치-종류&quot;&gt;설치 종류&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;java&lt;/li&gt;
-  &lt;li&gt;maven&lt;/li&gt;
-  &lt;li&gt;git&lt;/li&gt;
-  &lt;li&gt;intellij&lt;/li&gt;
-&lt;/ol&gt;
+        <title>우분투 16.04 python 3.7 설치</title>
+        <link>/%EC%84%A4%EC%B9%98/2022/02/05/python3.7.html</link>
+        <guid isPermaLink="true">/%EC%84%A4%EC%B9%98/2022/02/05/python3.7.html</guid>
+        <description>&lt;!-- @import &quot;[TOC]&quot; {cmd=&quot;toc&quot; depthFrom=1 depthTo=6 orderedList=false} --&gt;
 
-&lt;h2 id=&quot;1-java&quot;&gt;1. java&lt;/h2&gt;
-
-&lt;h3 id=&quot;jdk-설치-확인&quot;&gt;jdk 설치 확인&lt;/h3&gt;
-
-&lt;p&gt;$ javac -version&lt;br /&gt;
-$ sudo apt-get install default-jdk&lt;br /&gt;
-$ sudo apt-get install openjdk-8-jdk&lt;/p&gt;
-
-&lt;h3 id=&quot;환경-변수-설정&quot;&gt;환경 변수 설정&lt;/h3&gt;
-
-&lt;p&gt;$ vim /etc/profile&lt;br /&gt;
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/javac 맨 아래 추가&lt;br /&gt;
-$ reboot&lt;br /&gt;
-$ echo $JAVA_HOME으로 확인&lt;/p&gt;
-
-&lt;h2 id=&quot;2-maven&quot;&gt;2. maven&lt;/h2&gt;
-&lt;p&gt;$ sudo apt-get install maven&lt;/p&gt;
-
-&lt;h2 id=&quot;3-git&quot;&gt;3. git&lt;/h2&gt;
-&lt;p&gt;$ sudo apt-get install git&lt;/p&gt;
-
-&lt;h3 id=&quot;깃이-설치되어있다면-업데이트&quot;&gt;깃이 설치되어있다면 업데이트&lt;/h3&gt;
-
-&lt;p&gt;$ git clone git://git.kernel.org/pub/scm/git/git.git&lt;/p&gt;
-
-&lt;h2 id=&quot;4-intellij&quot;&gt;4. intellij&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.jetbrains.com/ko-kr/idea/download/#section=linux&quot;&gt;https://www.jetbrains.com/ko-kr/idea/download/#section=linux&lt;/a&gt;
-압축 해제 후 bin/idea.sh 설치&lt;/p&gt;
-
-&lt;h1 id=&quot;예제-실행해보기&quot;&gt;예제 실행해보기&lt;/h1&gt;
-&lt;p&gt;git clone https://github.com/eclipse/deeplearning4j-examples.git&lt;/p&gt;
-
-&lt;p&gt;cd dl4j-examples/&lt;/p&gt;
-
-&lt;p&gt;mvn clean install&lt;/p&gt;
-
-&lt;p&gt;open - dl4j-examples 폴더 열기&lt;/p&gt;
-
-&lt;p&gt;run - edit configuration&lt;/p&gt;
-
-&lt;p&gt;Main class, Working directory 설정 후 실행
-&lt;img src=&quot;https://user-images.githubusercontent.com/51734550/83331787-24f42280-a2d3-11ea-93ea-c99fb8399437.png&quot; alt=&quot;Screenshot from 2020-05-30 23-40-20&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;실행 결과
-&lt;img src=&quot;https://user-images.githubusercontent.com/51734550/83331892-74d2e980-a2d3-11ea-9056-79e12dbff799.png&quot; alt=&quot;Screenshot from 2020-05-31 00-12-27&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/51734550/83331893-76041680-a2d3-11ea-985f-9eb6b8ed6e41.png&quot; alt=&quot;Screenshot from 2020-05-31 00-12-32&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References:&lt;/h2&gt;
+&lt;!-- code_chunk_output --&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://deeplearning4j.org/docs/latest/deeplearning4j-quickstart&quot;&gt;https://deeplearning4j.org/docs/latest/deeplearning4j-quickstart&lt;/a&gt;
-&lt;!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjY5MTcyMjUsMTg4MjMwNDIwMCwtMT
-I0MzI1MTM4NF19
---&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#소개&quot;&gt;소개&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#설치-진행&quot;&gt;설치 진행&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#python-심볼릭-링크-변경&quot;&gt;python 심볼릭 링크 변경&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;!-- /code_chunk_output --&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;소개&quot;&gt;소개&lt;/h1&gt;
+
+&lt;p&gt;ubuntu 18.04 이상부터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt-get install python&lt;/code&gt;로 python 3.6 이상의 버전을 편하게 설치할 수 있습니다. 하지만 ubuntu 16.04 이하의 버전에서 파이썬 3.6 버전 이상의 설치를 하려면 직접 소스를 받아서 설치를 진행해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;해당 게시글에서는 파이썬 소스를 받아서 설치하는 방법을 공유합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;설치-진행&quot;&gt;설치 진행&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# apt 패키지 업데이트
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 소스 빌드 툴 설치
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;essential&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zlib1g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libncurses5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libgdbm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libnss3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libssl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libreadline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libffi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libbz2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 파이썬 3.7.3 소스 파일 다운로드
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;O&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xz&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 소스 파일 압축 해제
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xz&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 빌드 최적화(속도 향상)
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optimizations&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 8개 프로세스로 작업 진행
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# make install 는  python3 바이너리를 덮어쓸 수 있기 때문에 make altinstall 권장
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;altinstall&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 설치 확인&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3.7 &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+Python 3.7.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;python-심볼릭-링크-변경&quot;&gt;python 심볼릭 링크 변경&lt;/h1&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which python3
+/usr/local/bin/python3
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /usr/local/bin
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ll | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;python3
+lrwxrwxrwx  1 root root        9 Feb  4 10:38 python3 -&amp;gt; python3.7&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root    18064 Mar  7  2019 python3.5&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+lrwxrwxrwx  1 root root       17 Mar  7  2019 python3.5-config -&amp;gt; python3.5m-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root    18064 Mar  7  2019 python3.5m&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  1 root root     3072 Mar  7  2019 python3.5m-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root 14899360 Feb  4 10:35 python3.7&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root 14899360 Feb  4 10:35 python3.7m&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  1 root root     3105 Feb  4 10:35 python3.7m-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+lrwxrwxrwx  1 root root       16 Mar  7  2019 python3-config -&amp;gt; python3.5-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;python3이 심볼릭 링크인것 확인한 후(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lrwxrwxrwx&lt;/code&gt;) python3의 심볼릭 링크 변경&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; /usr/local/bin/python3
+&lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/bin/python3.7 /usr/local/bin/python3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;pip 업데이트&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3.7 &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--upgrade&lt;/span&gt; pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;pip 설치 확인&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@openapi:/usr/local/bin# pip &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+pip 22.0.3 from /usr/local/lib/python3.7/site-packages/pip &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;python 3.7&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Sat, 30 May 2020 13:17:00 +0900</pubDate>
+        <pubDate>Sat, 05 Feb 2022 00:17:00 +0900</pubDate>
       </item>
     
   </channel>

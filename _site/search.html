@@ -2,9 +2,9 @@
 <html class="no-js">
   <head>
 	<meta charset="utf-8">
-	<title>Search | Library</title>
+	<title>Search | 스터디 중 !</title>
 	<meta name="description"
-		content="Individual Study Note">
+		content="스터디 중 !">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -17,7 +17,7 @@
 	<link rel="canonical" href="/search.html">
 
 	<!-- RSS -->
-	<link rel="alternate" type="application/atom+xml" title="Library"
+	<link rel="alternate" type="application/atom+xml" title="스터디 중 !"
 		href="/feed.xml" />
 
 	<!-- Font Awesome -->
@@ -45,7 +45,7 @@
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/">Library</a>
+			<a href="/">스터디 중 !</a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -77,7 +77,7 @@
 
 
 <li>
-	<a href="mailto:prlhspt@naver.com" title="Email">
+	<a href="mailto:prlhspt@gmail.com" title="Email">
 		<i class="fas fa-fw fa-envelope"></i>
 	</a>
 </li>
@@ -154,25 +154,25 @@
 <script>
   window.store = {
     
-      "2020-06-16-fisrt-post-html": {
-        "title": "First Test page",
-        "tags": "test, sample",
-        "date": "June 16, 2020",
+      "ec-95-8c-ea-b3-a0-eb-a6-ac-ec-a6-98-2022-02-08-python-coding-test-html": {
+        "title": "파이썬 코딩테스트시 유용한 코드 템플릿",
+        "tags": "",
+        "date": "February 8, 2022",
         "author": "",
         "category": "",
-        "content": "테스트 입니다... 테스트입니다..테스트 입니다.",
-        "url": "//2020/06/16/fisrt-post.html"
+        "content": "  소개  deque 한번에 선언하기  defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성  Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력  Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력  isalnum: 영문, 숫자 판별  정규표현식으로 영문 숫자만 잘라내기  문자 뒤집기  람다로 정렬  이중 리스트 컴프리헨션  애너그램 구하기  key에 함수 넣기소개파이썬 알고리즘 인터뷰 에 대한 내용 중 구현하는 문제에서 유용하게 사용할 수 있는 코드 템플릿을 정리하였습니다.deque 한번에 선언하기bridge = deque(0 for _ in range(bridge_length))defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성import collectionsa = collections.defaultdict(int)a['A'] = 5a['B'] = 4a['C'] += 1print(a)# OUTPUTdefaultdict(&lt;class 'int'&gt;, {'A': 5, 'B': 4, 'C': 1})Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력import collectionsa = [1, 2, 3, 4, 5, 5, 5, 6, 6]b = collections.Counter(a)print(b)# OUTPUTCounter({5: 3, 6: 2, 1: 1, 2: 1, 3: 1, 4: 1})Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력import collectionsa = [1, 2, 3, 4, 5, 5, 5, 6, 6]b = collections.Counter(a)print(b.most_common(3))# OUTPUT[(5, 3), (6, 2), (1, 1)]isalnum: 영문, 숫자 판별for char in s:    if char.isalnum():        print(char)정규표현식으로 영문 숫자만 잘라내기s = re.sub('[^a-z0-9]', '', s)문자 뒤집기s == s[::-1]람다로 정렬letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))x를 공백 기준으로 split 해서 [1:]로 정렬하고, 동일하면 후 순위로 [0]으로 정렬이중 리스트 컴프리헨션import reparagraph = 'Bob hit a ball, the hit Ball flew far after it was hit'banned = ['hit']words = [word for word in re.sub(r'[^\\w]', ' ', paragraph)         .lower().split() if word not in banned]print(words)#OUTPUT['bob', 'a', 'ball', 'the', 'ball', 'flew', 'far', 'after', 'it', 'was']애너그램 구하기import collectionsstrs = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']anagrams = collections.defaultdict(list)for word in strs:    # 정렬하여 딕셔너리에 추가    anagrams[''.join(sorted(word))].append(word)print(list(anagrams.values()))# OUTPUT[['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]key에 함수 넣기a = ['cae', 'cfc', 'abc']def fn(s):    return s[1], s[-1]print(sorted(a, key=fn))",
+        "url": "//%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2022/02/08/python_coding_test.html"
       }
       ,
     
-      "dl4j-2020-05-30-dl4j-html": {
-        "title": "우분투 18.04 DL4J 예제 설치",
+      "ec-84-a4-ec-b9-98-2022-02-05-python3-7-html": {
+        "title": "우분투 16.04 python 3.7 설치",
         "tags": "",
-        "date": "May 30, 2020",
+        "date": "February 5, 2022",
         "author": "",
         "category": "",
-        "content": "설치 종류  java  maven  git  intellij1. javajdk 설치 확인$ javac -version$ sudo apt-get install default-jdk$ sudo apt-get install openjdk-8-jdk환경 변수 설정$ vim /etc/profileexport JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/javac 맨 아래 추가$ reboot$ echo $JAVA_HOME으로 확인2. maven$ sudo apt-get install maven3. git$ sudo apt-get install git깃이 설치되어있다면 업데이트$ git clone git://git.kernel.org/pub/scm/git/git.git4. intellijhttps://www.jetbrains.com/ko-kr/idea/download/#section=linux압축 해제 후 bin/idea.sh 설치예제 실행해보기git clone https://github.com/eclipse/deeplearning4j-examples.gitcd dl4j-examples/mvn clean installopen - dl4j-examples 폴더 열기run - edit configurationMain class, Working directory 설정 후 실행실행 결과References:  https://deeplearning4j.org/docs/latest/deeplearning4j-quickstart",
-        "url": "//dl4j/2020/05/30/dl4j.html"
+        "content": "  소개  설치 진행  python 심볼릭 링크 변경소개ubuntu 18.04 이상부터는 apt-get install python로 python 3.6 이상의 버전을 편하게 설치할 수 있습니다. 하지만 ubuntu 16.04 이하의 버전에서 파이썬 3.6 버전 이상의 설치를 하려면 직접 소스를 받아서 설치를 진행해야 합니다.해당 게시글에서는 파이썬 소스를 받아서 설치하는 방법을 공유합니다.설치 진행# apt 패키지 업데이트sudo apt update# 소스 빌드 툴 설치sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev curl libbz2-dev# 파이썬 3.7.3 소스 파일 다운로드curl -O https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz# 소스 파일 압축 해제tar -xf Python-3.7.3.tar.xzcd Python-3.7.3# 빌드 최적화(속도 향상)./configure --enable-optimizations# 8개 프로세스로 작업 진행make -j 8# make install 는  python3 바이너리를 덮어쓸 수 있기 때문에 make altinstall 권장sudo make altinstall# 설치 확인$ python3.7 --versionPython 3.7.3python 심볼릭 링크 변경$ which python3/usr/local/bin/python3$ cd /usr/local/bin$ ll | grep python3lrwxrwxrwx  1 root root        9 Feb  4 10:38 python3 -&gt; python3.7*-rwxr-xr-x  2 root root    18064 Mar  7  2019 python3.5*lrwxrwxrwx  1 root root       17 Mar  7  2019 python3.5-config -&gt; python3.5m-config*-rwxr-xr-x  2 root root    18064 Mar  7  2019 python3.5m*-rwxr-xr-x  1 root root     3072 Mar  7  2019 python3.5m-config*-rwxr-xr-x  2 root root 14899360 Feb  4 10:35 python3.7*-rwxr-xr-x  2 root root 14899360 Feb  4 10:35 python3.7m*-rwxr-xr-x  1 root root     3105 Feb  4 10:35 python3.7m-config*lrwxrwxrwx  1 root root       16 Mar  7  2019 python3-config -&gt; python3.5-config*python3이 심볼릭 링크인것 확인한 후(lrwxrwxrwx) python3의 심볼릭 링크 변경rm /usr/local/bin/python3ln -s /usr/local/bin/python3.7 /usr/local/bin/python3pip 업데이트python3.7 -m pip install --upgrade pippip 설치 확인root@openapi:/usr/local/bin# pip --versionpip 22.0.3 from /usr/local/lib/python3.7/site-packages/pip (python 3.7)",
+        "url": "//%EC%84%A4%EC%B9%98/2022/02/05/python3.7.html"
       }
       
     
