@@ -1,267 +1,239 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>스터디 중 !</title>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>http://localhost:4000/</link>
-    <description>스터디 중 !</description>
-    <pubDate>Wed, 09 Feb 2022 00:29:33 +0900</pubDate>
-    
-      <item>
-        <title>파이썬 코딩테스트시 유용한 코드 템플릿</title>
-        <link>/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2022/02/08/python_coding_test.html</link>
-        <guid isPermaLink="true">/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/2022/02/08/python_coding_test.html</guid>
-        <description>&lt;!-- @import &quot;[TOC]&quot; {cmd=&quot;toc&quot; depthFrom=1 depthTo=6 orderedList=true} --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-09T00:56:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">공부 중!</title><subtitle>공부 중!</subtitle><author><name>HyunSeok Lim</name><email>prlhspt@gmail.com</email></author><entry><title type="html">파이썬 코딩테스트시 유용한 코드 템플릿</title><link href="http://localhost:4000/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/python_coding_test/" rel="alternate" type="text/html" title="파이썬 코딩테스트시 유용한 코드 템플릿" /><published>2022-02-08T20:50:00+09:00</published><updated>2022-02-08T20:50:00+09:00</updated><id>http://localhost:4000/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/python_coding_test</id><content type="html" xml:base="http://localhost:4000/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/python_coding_test/"><![CDATA[<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=true} -->
 
-&lt;!-- code_chunk_output --&gt;
+<!-- code_chunk_output -->
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#소개&quot;&gt;소개&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#deque-한번에-선언하기&quot;&gt;deque 한번에 선언하기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#defaultdict-dict에-keyerror-대신-딕셔너리-아이템-생성&quot;&gt;defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#counter-키에는-아이템의-값-값에는-아이템의-개수인-딕셔너리-출력&quot;&gt;Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#countermost_commoni-가장-빈도수가-높은-요소-i개-출력&quot;&gt;Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#isalnum-영문-숫자-판별&quot;&gt;isalnum: 영문, 숫자 판별&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#정규표현식으로-영문-숫자만-잘라내기&quot;&gt;정규표현식으로 영문 숫자만 잘라내기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#문자-뒤집기&quot;&gt;문자 뒤집기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#람다로-정렬&quot;&gt;람다로 정렬&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#이중-리스트-컴프리헨션&quot;&gt;이중 리스트 컴프리헨션&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#애너그램-구하기&quot;&gt;애너그램 구하기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#key에-함수-넣기&quot;&gt;key에 함수 넣기&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li><a href="#소개">소개</a></li>
+  <li><a href="#deque-한번에-선언하기">deque 한번에 선언하기</a></li>
+  <li><a href="#defaultdict-dict에-keyerror-대신-딕셔너리-아이템-생성">defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성</a></li>
+  <li><a href="#counter-키에는-아이템의-값-값에는-아이템의-개수인-딕셔너리-출력">Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력</a></li>
+  <li><a href="#countermost_commoni-가장-빈도수가-높은-요소-i개-출력">Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력</a></li>
+  <li><a href="#isalnum-영문-숫자-판별">isalnum: 영문, 숫자 판별</a></li>
+  <li><a href="#정규표현식으로-영문-숫자만-잘라내기">정규표현식으로 영문 숫자만 잘라내기</a></li>
+  <li><a href="#문자-뒤집기">문자 뒤집기</a></li>
+  <li><a href="#람다로-정렬">람다로 정렬</a></li>
+  <li><a href="#이중-리스트-컴프리헨션">이중 리스트 컴프리헨션</a></li>
+  <li><a href="#애너그램-구하기">애너그램 구하기</a></li>
+  <li><a href="#key에-함수-넣기">key에 함수 넣기</a></li>
+</ol>
 
-&lt;!-- /code_chunk_output --&gt;
+<!-- /code_chunk_output -->
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h1 id=&quot;소개&quot;&gt;소개&lt;/h1&gt;
+<h1 id="소개">소개</h1>
 
-&lt;p&gt;&lt;a href=&quot;http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9791189909178&quot;&gt;파이썬 알고리즘 인터뷰&lt;/a&gt; 에 대한 내용 중 구현하는 문제에서 유용하게 사용할 수 있는 코드 템플릿을 정리하였습니다.&lt;/p&gt;
+<p><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9791189909178">파이썬 알고리즘 인터뷰</a> 에 대한 내용 중 구현하는 문제에서 유용하게 사용할 수 있는 코드 템플릿을 정리하였습니다.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h1 id=&quot;deque-한번에-선언하기&quot;&gt;deque 한번에 선언하기&lt;/h1&gt;
+<h1 id="deque-한번에-선언하기">deque 한번에 선언하기</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;bridge&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bridge_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bridge</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bridge_length</span><span class="p">))</span>
+</code></pre></div></div>
 
-&lt;h1 id=&quot;defaultdict--dict에-keyerror-대신-딕셔너리-아이템-생성&quot;&gt;defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성&lt;/h1&gt;
+<h1 id="defaultdict--dict에-keyerror-대신-딕셔너리-아이템-생성">defaultdict : dict에 KeyError 대신 딕셔너리 아이템 생성</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">collections</span>
 
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="n">a</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'B'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+<span class="n">a</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
 
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'C'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+<span class="n">a</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-&lt;span class=&quot;c1&quot;&gt;# OUTPUT
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;gt;, {'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;': 5, 'B': 4, '&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;': 1})
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="c1"># OUTPUT
+</span><span class="n">defaultdict</span><span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">int</span><span class="s">'&gt;, {'</span><span class="n">A</span><span class="s">': 5, '</span><span class="sa">B</span><span class="s">': 4, '</span><span class="n">C</span><span class="s">': 1})
+</span></code></pre></div></div>
 
-&lt;h1 id=&quot;counter--키에는-아이템의-값-값에는-아이템의-개수인-딕셔너리-출력&quot;&gt;Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력&lt;/h1&gt;
+<h1 id="counter--키에는-아이템의-값-값에는-아이템의-개수인-딕셔너리-출력">Counter : 키에는 아이템의 값, 값에는 아이템의 개수인 딕셔너리 출력</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">collections</span>
 
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-&lt;span class=&quot;c1&quot;&gt;# OUTPUT
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="c1"># OUTPUT
+</span><span class="n">Counter</span><span class="p">({</span><span class="mi">5</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+</code></pre></div></div>
 
-&lt;h1 id=&quot;countermost_commoni--가장-빈도수가-높은-요소-i개-출력&quot;&gt;Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력&lt;/h1&gt;
+<h1 id="countermost_commoni--가장-빈도수가-높은-요소-i개-출력">Counter.most_common(i) : 가장 빈도수가 높은 요소 i개 출력</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">collections</span>
 
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most_common&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 
-&lt;span class=&quot;c1&quot;&gt;# OUTPUT
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+<span class="c1"># OUTPUT
+</span><span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;h1 id=&quot;isalnum-영문-숫자-판별&quot;&gt;isalnum: 영문, 숫자 판별&lt;/h1&gt;
+<h1 id="isalnum-영문-숫자-판별">isalnum: 영문, 숫자 판별</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isalnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span><span class="p">.</span><span class="n">isalnum</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</code></pre></div></div>
 
-&lt;h1 id=&quot;정규표현식으로-영문-숫자만-잘라내기&quot;&gt;정규표현식으로 영문 숫자만 잘라내기&lt;/h1&gt;
+<h1 id="정규표현식으로-영문-숫자만-잘라내기">정규표현식으로 영문 숫자만 잘라내기</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'[^a-z0-9]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'[^a-z0-9]'</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div></div>
 
-&lt;h1 id=&quot;문자-뒤집기&quot;&gt;문자 뒤집기&lt;/h1&gt;
+<h1 id="문자-뒤집기">문자 뒤집기</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">==</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
 
-&lt;h1 id=&quot;람다로-정렬&quot;&gt;람다로 정렬&lt;/h1&gt;
+<h1 id="람다로-정렬">람다로 정렬</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;letters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">letters</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+</code></pre></div></div>
 
-&lt;p&gt;x를 공백 기준으로 split 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[1:]&lt;/code&gt;로 정렬하고, 동일하면 후 순위로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[0]&lt;/code&gt;으로 정렬&lt;/p&gt;
+<p>x를 공백 기준으로 split 해서 <code class="language-plaintext highlighter-rouge">[1:]</code>로 정렬하고, 동일하면 후 순위로 <code class="language-plaintext highlighter-rouge">[0]</code>으로 정렬</p>
 
-&lt;h1 id=&quot;이중-리스트-컴프리헨션&quot;&gt;이중 리스트 컴프리헨션&lt;/h1&gt;
+<h1 id="이중-리스트-컴프리헨션">이중 리스트 컴프리헨션</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
 
-&lt;span class=&quot;n&quot;&gt;paragraph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Bob hit a ball, the hit Ball flew far after it was hit'&lt;/span&gt;
+<span class="n">paragraph</span> <span class="o">=</span> <span class="s">'Bob hit a ball, the hit Ball flew far after it was hit'</span>
 
-&lt;span class=&quot;n&quot;&gt;banned&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+<span class="n">banned</span> <span class="o">=</span> <span class="p">[</span><span class="s">'hit'</span><span class="p">]</span>
 
-&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r'[^\w]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paragraph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;banned&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s">'[^\w]'</span><span class="p">,</span> <span class="s">' '</span><span class="p">,</span> <span class="n">paragraph</span><span class="p">)</span>
+         <span class="p">.</span><span class="n">lower</span><span class="p">().</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">banned</span><span class="p">]</span>
 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 
-&lt;span class=&quot;c1&quot;&gt;#OUTPUT
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bob'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ball'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'the'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ball'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'flew'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'far'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'after'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'it'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'was'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+<span class="c1">#OUTPUT
+</span><span class="p">[</span><span class="s">'bob'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'ball'</span><span class="p">,</span> <span class="s">'the'</span><span class="p">,</span> <span class="s">'ball'</span><span class="p">,</span> <span class="s">'flew'</span><span class="p">,</span> <span class="s">'far'</span><span class="p">,</span> <span class="s">'after'</span><span class="p">,</span> <span class="s">'it'</span><span class="p">,</span> <span class="s">'was'</span><span class="p">]</span>
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;h1 id=&quot;애너그램-구하기&quot;&gt;애너그램 구하기&lt;/h1&gt;
+<h1 id="애너그램-구하기">애너그램 구하기</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">collections</span>
 
-&lt;span class=&quot;n&quot;&gt;strs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'eat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tea'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tan'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ate'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'bat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+<span class="n">strs</span> <span class="o">=</span> <span class="p">[</span><span class="s">'eat'</span><span class="p">,</span> <span class="s">'tea'</span><span class="p">,</span> <span class="s">'tan'</span><span class="p">,</span> <span class="s">'ate'</span><span class="p">,</span> <span class="s">'nat'</span><span class="p">,</span> <span class="s">'bat'</span><span class="p">]</span>
 
-&lt;span class=&quot;n&quot;&gt;anagrams&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="n">anagrams</span> <span class="o">=</span> <span class="n">collections</span><span class="p">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 정렬하여 딕셔너리에 추가
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;anagrams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">strs</span><span class="p">:</span>
+    <span class="c1"># 정렬하여 딕셔너리에 추가
+</span>    <span class="n">anagrams</span><span class="p">[</span><span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">word</span><span class="p">))].</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anagrams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">anagrams</span><span class="p">.</span><span class="n">values</span><span class="p">()))</span>
 
-&lt;span class=&quot;c1&quot;&gt;# OUTPUT
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'eat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tea'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ate'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'tan'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'nat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="c1"># OUTPUT
+</span><span class="p">[[</span><span class="s">'eat'</span><span class="p">,</span> <span class="s">'tea'</span><span class="p">,</span> <span class="s">'ate'</span><span class="p">],</span> <span class="p">[</span><span class="s">'tan'</span><span class="p">,</span> <span class="s">'nat'</span><span class="p">],</span> <span class="p">[</span><span class="s">'bat'</span><span class="p">]]</span>
+</code></pre></div></div>
 
-&lt;h1 id=&quot;key에-함수-넣기&quot;&gt;key에 함수 넣기&lt;/h1&gt;
+<h1 id="key에-함수-넣기">key에 함수 넣기</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'cae'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'cfc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'abc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">'cae'</span><span class="p">,</span> <span class="s">'cfc'</span><span class="p">,</span> <span class="s">'abc'</span><span class="p">]</span>
 
 
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">fn</span><span class="p">))</span>
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Tue, 08 Feb 2022 20:50:00 +0900</pubDate>
-      </item>
-    
-      <item>
-        <title>우분투 16.04 python 3.7 설치</title>
-        <link>/%EC%84%A4%EC%B9%98/2022/02/05/python3.7.html</link>
-        <guid isPermaLink="true">/%EC%84%A4%EC%B9%98/2022/02/05/python3.7.html</guid>
-        <description>&lt;!-- @import &quot;[TOC]&quot; {cmd=&quot;toc&quot; depthFrom=1 depthTo=6 orderedList=false} --&gt;
+</code></pre></div></div>]]></content><author><name>HyunSeok Lim</name><email>prlhspt@gmail.com</email></author><category term="알고리즘" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">우분투 16.04 python 3.7 설치</title><link href="http://localhost:4000/%EC%84%A4%EC%B9%98/python3.7/" rel="alternate" type="text/html" title="우분투 16.04 python 3.7 설치" /><published>2022-02-05T00:17:00+09:00</published><updated>2022-02-05T00:17:00+09:00</updated><id>http://localhost:4000/%EC%84%A4%EC%B9%98/python3.7</id><content type="html" xml:base="http://localhost:4000/%EC%84%A4%EC%B9%98/python3.7/"><![CDATA[<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
-&lt;!-- code_chunk_output --&gt;
+<!-- code_chunk_output -->
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#소개&quot;&gt;소개&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#설치-진행&quot;&gt;설치 진행&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#python-심볼릭-링크-변경&quot;&gt;python 심볼릭 링크 변경&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><a href="#소개">소개</a></li>
+  <li><a href="#설치-진행">설치 진행</a></li>
+  <li><a href="#python-심볼릭-링크-변경">python 심볼릭 링크 변경</a></li>
+</ul>
 
-&lt;!-- /code_chunk_output --&gt;
+<!-- /code_chunk_output -->
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h1 id=&quot;소개&quot;&gt;소개&lt;/h1&gt;
+<h1 id="소개">소개</h1>
 
-&lt;p&gt;ubuntu 18.04 이상부터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt-get install python&lt;/code&gt;로 python 3.6 이상의 버전을 편하게 설치할 수 있습니다. 하지만 ubuntu 16.04 이하의 버전에서 파이썬 3.6 버전 이상의 설치를 하려면 직접 소스를 받아서 설치를 진행해야 합니다.&lt;/p&gt;
+<p>ubuntu 18.04 이상부터는 <code class="language-plaintext highlighter-rouge">apt-get install python</code>로 python 3.6 이상의 버전을 편하게 설치할 수 있습니다. 하지만 ubuntu 16.04 이하의 버전에서 파이썬 3.6 버전 이상의 설치를 하려면 직접 소스를 받아서 설치를 진행해야 합니다.</p>
 
-&lt;p&gt;해당 게시글에서는 파이썬 소스를 받아서 설치하는 방법을 공유합니다.&lt;/p&gt;
+<p>해당 게시글에서는 파이썬 소스를 받아서 설치하는 방법을 공유합니다.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h1 id=&quot;설치-진행&quot;&gt;설치 진행&lt;/h1&gt;
+<h1 id="설치-진행">설치 진행</h1>
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# apt 패키지 업데이트
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># apt 패키지 업데이트
+</span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
 
-&lt;span class=&quot;c1&quot;&gt;# 소스 빌드 툴 설치
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;essential&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zlib1g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libncurses5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libgdbm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libnss3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libssl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libreadline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libffi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libbz2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt;
+<span class="c1"># 소스 빌드 툴 설치
+</span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">libncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgdbm</span><span class="o">-</span><span class="n">dev</span> <span class="n">libnss3</span><span class="o">-</span><span class="n">dev</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">libffi</span><span class="o">-</span><span class="n">dev</span> <span class="n">curl</span> <span class="n">libbz2</span><span class="o">-</span><span class="n">dev</span>
 
-&lt;span class=&quot;c1&quot;&gt;# 파이썬 3.7.3 소스 파일 다운로드
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;O&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xz&lt;/span&gt;
+<span class="c1"># 파이썬 3.7.3 소스 파일 다운로드
+</span><span class="n">curl</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">python</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">ftp</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="mf">3.7</span><span class="p">.</span><span class="mi">3</span><span class="o">/</span><span class="n">Python</span><span class="o">-</span><span class="mf">3.7</span><span class="p">.</span><span class="mf">3.</span><span class="n">tar</span><span class="p">.</span><span class="n">xz</span>
 
-&lt;span class=&quot;c1&quot;&gt;# 소스 파일 압축 해제
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xz&lt;/span&gt;
+<span class="c1"># 소스 파일 압축 해제
+</span><span class="n">tar</span> <span class="o">-</span><span class="n">xf</span> <span class="n">Python</span><span class="o">-</span><span class="mf">3.7</span><span class="p">.</span><span class="mf">3.</span><span class="n">tar</span><span class="p">.</span><span class="n">xz</span>
 
-&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+<span class="n">cd</span> <span class="n">Python</span><span class="o">-</span><span class="mf">3.7</span><span class="p">.</span><span class="mi">3</span>
 
-&lt;span class=&quot;c1&quot;&gt;# 빌드 최적화(속도 향상)
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optimizations&lt;/span&gt;
+<span class="c1"># 빌드 최적화(속도 향상)
+</span><span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">optimizations</span>
 
-&lt;span class=&quot;c1&quot;&gt;# 8개 프로세스로 작업 진행
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+<span class="c1"># 8개 프로세스로 작업 진행
+</span><span class="n">make</span> <span class="o">-</span><span class="n">j</span> <span class="mi">8</span>
 
-&lt;span class=&quot;c1&quot;&gt;# make install 는  python3 바이너리를 덮어쓸 수 있기 때문에 make altinstall 권장
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;altinstall&lt;/span&gt;
+<span class="c1"># make install 는  python3 바이너리를 덮어쓸 수 있기 때문에 make altinstall 권장
+</span><span class="n">sudo</span> <span class="n">make</span> <span class="n">altinstall</span>
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 설치 확인&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3.7 &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 설치 확인</span>
+<span class="nv">$ </span>python3.7 <span class="nt">--version</span>
 Python 3.7.3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;h1 id=&quot;python-심볼릭-링크-변경&quot;&gt;python 심볼릭 링크 변경&lt;/h1&gt;
+<h1 id="python-심볼릭-링크-변경">python 심볼릭 링크 변경</h1>
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which python3
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>which python3
 /usr/local/bin/python3
 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /usr/local/bin
+<span class="nv">$ </span><span class="nb">cd</span> /usr/local/bin
 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ll | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;python3
-lrwxrwxrwx  1 root root        9 Feb  4 10:38 python3 -&amp;gt; python3.7&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root    18064 Mar  7  2019 python3.5&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-lrwxrwxrwx  1 root root       17 Mar  7  2019 python3.5-config -&amp;gt; python3.5m-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root    18064 Mar  7  2019 python3.5m&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  1 root root     3072 Mar  7  2019 python3.5m-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root 14899360 Feb  4 10:35 python3.7&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  2 root root 14899360 Feb  4 10:35 python3.7m&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-rwxr-xr-x&lt;/span&gt;  1 root root     3105 Feb  4 10:35 python3.7m-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-lrwxrwxrwx  1 root root       16 Mar  7  2019 python3-config -&amp;gt; python3.5-config&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="nv">$ </span>ll | <span class="nb">grep </span>python3
+lrwxrwxrwx  1 root root        9 Feb  4 10:38 python3 -&gt; python3.7<span class="k">*</span>
+<span class="nt">-rwxr-xr-x</span>  2 root root    18064 Mar  7  2019 python3.5<span class="k">*</span>
+lrwxrwxrwx  1 root root       17 Mar  7  2019 python3.5-config -&gt; python3.5m-config<span class="k">*</span>
+<span class="nt">-rwxr-xr-x</span>  2 root root    18064 Mar  7  2019 python3.5m<span class="k">*</span>
+<span class="nt">-rwxr-xr-x</span>  1 root root     3072 Mar  7  2019 python3.5m-config<span class="k">*</span>
+<span class="nt">-rwxr-xr-x</span>  2 root root 14899360 Feb  4 10:35 python3.7<span class="k">*</span>
+<span class="nt">-rwxr-xr-x</span>  2 root root 14899360 Feb  4 10:35 python3.7m<span class="k">*</span>
+<span class="nt">-rwxr-xr-x</span>  1 root root     3105 Feb  4 10:35 python3.7m-config<span class="k">*</span>
+lrwxrwxrwx  1 root root       16 Mar  7  2019 python3-config -&gt; python3.5-config<span class="k">*</span>
+</code></pre></div></div>
 
-&lt;p&gt;python3이 심볼릭 링크인것 확인한 후(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lrwxrwxrwx&lt;/code&gt;) python3의 심볼릭 링크 변경&lt;/p&gt;
+<p>python3이 심볼릭 링크인것 확인한 후(<code class="language-plaintext highlighter-rouge">lrwxrwxrwx</code>) python3의 심볼릭 링크 변경</p>
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; /usr/local/bin/python3
-&lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/bin/python3.7 /usr/local/bin/python3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> /usr/local/bin/python3
+<span class="nb">ln</span> <span class="nt">-s</span> /usr/local/bin/python3.7 /usr/local/bin/python3
+</code></pre></div></div>
 
-&lt;p&gt;pip 업데이트&lt;/p&gt;
+<p>pip 업데이트</p>
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3.7 &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--upgrade&lt;/span&gt; pip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.7 <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
+</code></pre></div></div>
 
-&lt;p&gt;pip 설치 확인&lt;/p&gt;
+<p>pip 설치 확인</p>
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@openapi:/usr/local/bin# pip &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
-pip 22.0.3 from /usr/local/lib/python3.7/site-packages/pip &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;python 3.7&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sat, 05 Feb 2022 00:17:00 +0900</pubDate>
-      </item>
-    
-  </channel>
-</rss>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@openapi:/usr/local/bin# pip <span class="nt">--version</span>
+pip 22.0.3 from /usr/local/lib/python3.7/site-packages/pip <span class="o">(</span>python 3.7<span class="o">)</span>
+</code></pre></div></div>]]></content><author><name>HyunSeok Lim</name><email>prlhspt@gmail.com</email></author><category term="설치" /><summary type="html"><![CDATA[]]></summary></entry></feed>
