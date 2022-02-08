@@ -1,7 +1,7 @@
 ---
 title: 파이썬 코딩테스트시 유용한 코드 템플릿
 date: 2022-02-08 20:50:00 +0900
-category: Algorithm
+category: algorithm
 ---
 
 
