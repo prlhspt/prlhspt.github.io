@@ -135,6 +135,8 @@ print(words)
 
 # 애너그램 구하기
 
+애너그램 : 어떠한 단어의 문자를 재배열하여 다른 뜻을 가지는 다른 단어로 바꾸는 것
+
 ```python
 import collections
 
